@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - TMII</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Styles untuk navbar */
+        header {
+            background: rgba(0, 0, 0,0.400); /* Warna latar belakang hitam transparan */
+            padding: 15px 0;
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none; /* ilangin garis bawah a href*/
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        /* Styles untuk jumbotron */
+        .jumbotron {
+            background-image: url('tmii.jpg');
+            background-size: cover;
+            background-position: center center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            margin-top: -80px;
+            position: relative;
+            height: 50vh;
+        }
+
+        .jumbotron .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+
+        /* Styles untuk content */
+        .content {
+            align-items: center;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .card-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Styles untuk card  */
+        .card {
+            width: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            margin : 0 15px 0 15px 0;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .card-description {
+            color: #666;
+        }
+
+
+        /* Style untuk form */
+        .feedback-form {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styles untuk footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header (Navbar) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="tmii-logo.png" alt="Logo">
+            </div>
+            <nav>
+                <a href="#profile">Profile</a>
+                <a href="#maps">Map</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <div class="text-overlay">
+            <h1>Selamat Datang di Objek Wisata</h1>
+            <p>Temukan keindahan alam dan budaya yang menakjubkan.</p>
+        </div>
+    </div>
+
+    <!-- Isi konten halaman di sini -->
+    <div class="content" id="profile">
+        <h1 style="text-align: center;">Anjungan Dari Seluruh Indonesia</h1>
+        <div class="card-row">
+            <div class="card">
+                <img src="tmii.jpg" alt="Card Image">
+                <div class="card-content">
+                    <h2 class="card-title">DKI Jakarta</h2>
+                    <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="tmii.jpg" alt="Card Image">
+                <div class="card-content">
+                    <h2 class="card-title">Jawa Barat</h2>
+                    <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="tmii.jpg" alt="Card Image">
+                <div class="card-content">
+                    <h2 class="card-title">Papua</h2>
+                    <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="maps">
+        <h1 style="text-align: center;">Peta Taman Mini Indonesia Indah</h1>
+        <img src="peta-tmii.jpg" alt="" width="1200">
+    </div>
+
+    <div class="content" id="contact">
+        <h1 style="text-align: center;">Kontak Kami</h1>
+        <div class="feedback-form">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                </div>
+    
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Taman Mini Indonesia Indah. All rights reserved.</p>
+    </footer>
+</body>
+</html>
