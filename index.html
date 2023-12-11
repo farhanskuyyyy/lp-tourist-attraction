@@ -1,191 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - TMII</title>
 
     <style>
         body {
+            /* Mengatur margin dan padding bawaan menjadi 0 */
             margin: 0;
             padding: 0;
+
+            /* Mengatur font family menjadi Arial atau sans-serif */
             font-family: Arial, sans-serif;
+
+            /* Mengatur background color menjadi #f4f4f4 (abu-abu terang) */
             background-color: #f4f4f4;
         }
 
         /* Styles untuk navbar */
         header {
-            background: rgba(0, 0, 0,0.400); /* Warna latar belakang hitam transparan */
+            /* Mengatur background menjadi transparan dengan warna hitam (opacity 0.4) */
+            background: rgba(0, 0, 0, 0.4);
+
+            /* Memberi padding 15px di atas dan bawah */
             padding: 15px 0;
+
+            /* Mengatur z-index agar navbar selalu berada di atas konten lainnya */
             z-index: 1000;
+
+            /* Mengatur posisi navbar menjadi sticky (fixed) pada scroll */
             position: sticky;
             top: 0;
             width: 100%;
         }
 
         .container {
+            /* Mengatur layout menjadi flexbox */
             display: flex;
+
+            /* Mengatur justify-content menjadi space-between (mendistribusikan item secara merata) */
             justify-content: space-between;
+
+            /* Mengatur align-items menjadi center (menempatkan item secara vertikal di tengah) */
             align-items: center;
+
+            /* Mengatur lebar maksimal menjadi 1200px */
             max-width: 1200px;
+
+            /* Memberi margin 0 secara otomatis ke kanan dan kiri */
             margin: 0 auto;
         }
 
         .logo {
+            /* Mengatur layout menjadi flexbox */
             display: flex;
+
+            /* Mengatur align-items menjadi center (menempatkan logo dan text secara vertikal di tengah) */
             align-items: center;
         }
 
         .logo img {
+            /* Mengatur lebar maksimal logo menjadi 50px */
             max-width: 50px;
+
+            /* Memberi margin kanan 10px */
             margin-right: 10px;
         }
 
         nav {
+            /* Mengatur layout menjadi flexbox */
             display: flex;
+
+            /* Mengatur align-items menjadi center (menempatkan menu secara vertikal di tengah) */
             align-items: center;
         }
 
         nav a {
+            /* Mengatur warna text menjadi putih */
             color: #fff;
-            text-decoration: none; /* ilangin garis bawah a href*/
+
+            /* Menghilangkan garis bawah pada link (a href) */
+            text-decoration: none;
+
+            /* Membuat text menjadi bold */
             font-weight: bold;
+
+            /* Memberi margin 0 kanan dan kiri dan 15px atas bawah */
             margin: 0 15px;
         }
 
         /* Styles untuk jumbotron */
         .jumbotron {
-            background-image: url('tmii.jpg');
+            /* Mengatur background image dengan gambar tmii.jpg */
+            background-image: url("tmii.jpg");
+
+            /* Mengatur ukuran background cover */
             background-size: cover;
+
+            /* Menempatkan background di tengah */
             background-position: center center;
+
+            /* Mengatur warna text menjadi putih */
             color: #fff;
+
+            /* Menyetel text align menjadi center */
             text-align: center;
+
+            /* Memberi padding 100px atas dan bawah */
             padding: 100px 0;
+
+            /* Memberi margin top -80px */
             margin-top: -80px;
+
+            /* Mengatur posisi relatif */
             position: relative;
+
+            /* Mengatur tinggi menjadi 50vh (50% viewport height) */
             height: 50vh;
         }
 
         .jumbotron .text-overlay {
+            /* Mengatur posisi absolut */
             position: absolute;
+
+            /* Mengatur top 50% */
             top: 50%;
+
+            /* Mengatur left 50% */
             left: 50%;
+
+            /* Mengatur transform translate(-50%, -50%) untuk memusatkan content */
             transform: translate(-50%, -50%);
+
+            /* Mengatur warna text menjadi putih */
             color: #fff;
         }
 
         /* Styles untuk content */
         .content {
+            /* Mengatur align-items menjadi center */
             align-items: center;
+
+            /* Mengatur lebar maksimal menjadi 1200px */
             max-width: 1200px;
+
+            /* Memberi margin 50px auto */
             margin: 50px auto;
         }
 
         .card-row {
+            /* Mengatur display menjadi flexbox */
             display: flex;
+
+            /* Mengatur justify-content menjadi space-between (mendistribusikan card secara merata) */
             justify-content: space-between;
+
+            /* Mengatur align-items menjadi center */
             align-items: center;
         }
 
         /* Styles untuk card  */
         .card {
+            /* Mengatur lebar menjadi 380px */
             width: 380px;
+
+            /* Mengatur border radius menjadi 8px */
             border-radius: 8px;
+
+            /* Mengatur overflow hidden */
             overflow: hidden;
+
+            /* Mengatur box shadow */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            /* Mengatur transition transform */
             transition: transform 0.3s ease-in-out;
-            margin : 0 15px 0 15px 0;
+
+            /* Memberi margin 0 15px 0 15px */
+            margin: 0 15px 0 15px;
         }
 
         .card:hover {
+            /* Mengubah transform saat hover menjadi scale(1.05) */
             transform: scale(1.05);
         }
 
         .card img {
+            /* Mengatur lebar menjadi 100% */
             width: 100%;
+
+            /* Mengatur tinggi menjadi 200px */
             height: 200px;
+
+            /* Mengatur object-fit cover */
             object-fit: cover;
         }
 
         .card-content {
+            /* Memberi padding 16px */
             padding: 16px;
         }
 
         .card-title {
+            /* Mengatur font size menjadi 1.5rem */
             font-size: 1.5rem;
+
+            /* Memberi margin bottom 8px */
             margin-bottom: 8px;
         }
 
         .card-description {
+            /* Mengatur warna text menjadi #666 (abu-abu gelap) */
             color: #666;
         }
 
-
         /* Style untuk form */
         .feedback-form {
+            /* Memberi padding 20px pada form */
             padding: 20px;
         }
 
         .form-group {
+            /* Memberi margin bawah 20px pada setiap group input */
             margin-bottom: 20px;
         }
 
         label {
+            /* Mengatur display menjadi block */
             display: block;
+
+            /* Mengatur font size menjadi 0.9rem */
             font-size: 0.9rem;
+
+            /* Memberi margin bawah 6px */
             margin-bottom: 6px;
         }
 
-        input, textarea {
+        input,
+        textarea {
+            /* Mengatur lebar input menjadi 100% */
             width: 100%;
+
+            /* Memberi padding 10px pada input */
             padding: 10px;
+
+            /* Mengatur border input */
             border: 1px solid #ccc;
+
+            /* Mengatur border radius input */
             border-radius: 4px;
+
+            /* Mengatur box-sizing menjadi border-box */
             box-sizing: border-box;
+
+            /* Mengatur font size input */
             font-size: 0.9rem;
         }
 
         button {
+            /* Mengatur background color button menjadi #4caf50 (hijau) */
             background-color: #4caf50;
+
+            /* Mengatur warna text button menjadi putih */
             color: #fff;
+
+            /* Memberi padding 10px 20px pada button */
             padding: 10px 20px;
+
+            /* Menghilangkan border button */
             border: none;
+
+            /* Mengatur border radius button */
             border-radius: 4px;
+
+            /* Mengubah kursor menjadi pointer ketika hover */
             cursor: pointer;
         }
 
         button:hover {
+            /* Mengubah background color button menjadi #45a049 (hijau tua) saat hover */
             background-color: #45a049;
         }
 
         /* Styles untuk footer */
         footer {
+            /* Mengatur background color footer menjadi #333 (abu-abu tua) */
             background-color: #333;
+
+            /* Mengatur warna text footer menjadi putih */
             color: #fff;
+
+            /* Memberi padding 20px 0 pada footer */
             padding: 20px 0;
+
+            /* Menyetel text align menjadi center */
             text-align: center;
         }
-
-
     </style>
 </head>
-<body>
 
-    <!-- Header (Navbar) -->
+<body>
+    <!-- Header (Navbar) Untuk tampilan atas -->
     <header>
         <div class="container">
             <div class="logo">
-                <img src="tmii-logo.png" alt="Logo">
+                <img src="tmii-logo.png" alt="Logo" />
+                <!-- load image -->
             </div>
             <nav>
                 <a href="#profile">Profile</a>
+                <!-- lompat ke div dengan id profile -->
                 <a href="#maps">Map</a>
+                <!-- lompat ke div dengan id maps -->
                 <a href="#contact">Contact</a>
+                <!-- lompat ke div dengan id contact -->
             </nav>
         </div>
     </header>
 
-    <!-- Jumbotron -->
+    <!-- Jumbotron untuk tampilan awal yang berisi image dan text  -->
     <div class="jumbotron">
         <div class="text-overlay">
             <h1>Selamat Datang di Taman Mini Indonesia Indah</h1>
@@ -195,63 +330,84 @@
 
     <!-- Isi konten halaman di sini -->
     <div class="content" id="profile">
-        <h1 style="text-align: center;">Anjungan Dari Seluruh Indonesia</h1>
+        <h1 style="text-align: center">Anjungan Dari Seluruh Indonesia</h1>
         <div class="card-row">
             <div class="card">
-                <img src="anjungan-dki.jpg" alt="Card Image">
+                <img src="anjungan-dki.jpg" alt="Card Image" />
                 <div class="card-content">
                     <h2 class="card-title">DKI Jakarta</h2>
-                    <p class="card-description">Kota Jakarta dulunya adalah sebuah bandar kecil Bernama Sunda Kepala. Baru pada 22 Juli 1527, kota ini berganti nama menjadi Jayakarta. Namanya sendiri berarti kemenangan sempurna usai dibebaskan oleh Fatahilah dari cengkraman Portugis. Makanya, pada 22 Juni diperingati sebagai hari jadi kota Jakarta.</p>
+                    <p class="card-description">
+                        Kota Jakarta dulunya adalah sebuah bandar kecil Bernama Sunda Kepala. Baru pada 22 Juli 1527,
+                        kota ini berganti nama menjadi Jayakarta. Namanya sendiri berarti kemenangan sempurna usai
+                        dibebaskan oleh Fatahilah dari cengkraman Portugis.
+                    </p>
                 </div>
             </div>
             <div class="card">
-                <img src="anjungan-jawa-barat.jpg" alt="Card Image">
+                <img src="anjungan-jawa-barat.jpg" alt="Card Image" />
                 <div class="card-content">
                     <h2 class="card-title">Jawa Barat</h2>
-                    <p class="card-description">Jawa Barat merupakan “Jantung” kebudayaan Sunda. Ia juga disebut sebagai “Tatar Sunda”. Provinsi ini juga kaya akan berbagai macam hasil bumi. Bahkan, dilansir dari laman resminya, Jawa Barat menyumbang 17.76% dari total produsen beras secara nasional.</p>
+                    <p class="card-description">
+                        Jawa Barat merupakan “Jantung” kebudayaan Sunda. Ia juga disebut sebagai “Tatar Sunda”. Provinsi
+                        ini juga kaya akan berbagai macam hasil bumi. Bahkan, dilansir dari laman resminya, Jawa Barat
+                        menyumbang 17.76% dari total
+                        produsen beras secara nasional.
+                    </p>
                 </div>
             </div>
             <div class="card">
-                <img src="anjungan-papua.jpg" alt="Card Image">
+                <img src="anjungan-papua.jpg" alt="Card Image" />
                 <div class="card-content">
                     <h2 class="card-title">Papua</h2>
-                    <p class="card-description"> Papua khususnya daerah pegunungan ketika ada tamu yang datang. Tahukah kamu kalau 80% wilayah Papua adalah hutan tropis yang sangat lebat. Hutan dan pegunungan ini adalah rumah dari banyak sekali suku yang masih semi terisolir.</p>
+                    <p class="card-description">
+                        Papua khususnya daerah pegunungan ketika ada tamu yang datang. Tahukah kamu kalau 80% wilayah
+                        Papua adalah hutan tropis yang sangat lebat. Hutan dan pegunungan ini adalah rumah dari banyak
+                        sekali suku yang masih semi
+                        terisolir.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Maps -->
     <div class="content" id="maps">
-        <h1 style="text-align: center;">Peta Taman Mini Indonesia Indah</h1>
-        <img src="peta-tmii.jpg" alt="" width="1200">
+        <h1 style="text-align: center">Peta Taman Mini Indonesia Indah</h1>
+        <img src="peta-tmii.jpg" alt="" width="1200" />
     </div>
+    <!-- End Maps -->
 
+    <!-- Kontak Kami -->
     <div class="content" id="contact">
-        <h1 style="text-align: center;">Kontak Kami</h1>
+        <h1 style="text-align: center">Kontak Kami</h1>
         <div class="feedback-form">
             <form action="#" method="post">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required />
                 </div>
-    
+
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required />
                 </div>
-    
+
                 <div class="form-group">
                     <label for="feedback">Feedback:</label>
                     <textarea id="feedback" name="feedback" rows="4" required></textarea>
                 </div>
-    
+
                 <button type="submit">Submit Feedback</button>
             </form>
         </div>
     </div>
+    <!-- Kontak Kami End -->
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2023 Taman Mini Indonesia Indah. All rights reserved.</p>
     </footer>
+    <!-- End Footer -->
 </body>
+
 </html>
